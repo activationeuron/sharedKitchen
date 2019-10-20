@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
@@ -11,10 +11,14 @@ import Typography from "@material-ui/core/Typography";
 import Addkitchen from "./Addkitchens";
 import { connect } from "react-redux";
 import ImageUploader from "react-images-upload";
-
+import { fetchUsers } from "../../actions/index";
 import Nav from "./Nav";
 
-function VerticalLinearStepper() {
+function VerticalLinearStepper(props) {
+  useEffect(() => {
+    props.fetchUsers();
+  }, []);
+  console.log(props);
   const axios = require("axios");
   const [Firststate, setFirststate] = React.useState({});
   const onFirst = pictures => {
@@ -67,6 +71,17 @@ function VerticalLinearStepper() {
   }
 
   function getStepContent(step) {
+    if (!props.authState) {
+      return (
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span>
+              <h3>Loading User credential ....</h3>
+            </span>
+          </div>
+        </div>
+      );
+    }
     switch (step) {
       case 0:
         return (
@@ -272,8 +287,12 @@ function VerticalLinearStepper() {
 }
 
 function mapStateToProps(state, hasownprops) {
-  console.log(state);
-  console.log(hasownprops);
+  return { authState: state.auth.userData };
 }
 
-export default connect(mapStateToProps)(VerticalLinearStepper);
+export default connect(
+  mapStateToProps,
+  {
+    fetchUsers
+  }
+)(VerticalLinearStepper);
