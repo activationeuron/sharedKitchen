@@ -11,10 +11,6 @@ const requireLogin = require(".././controller/requireLogin");
 app.use(cors());
 
 app.post("/addkitchen", requireLogin, function(req, res) {
-  if (!req.user) {
-    return res.status(401).send({ error: "Require Login to add kitchen" });
-  }
-
   // res.send('respond with a resource');
   console.log(req.body, "body log");
   mysqlconnection.connect(function(err) {
