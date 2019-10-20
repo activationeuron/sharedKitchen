@@ -7,21 +7,25 @@ const path = require("path");
 const multer = require("multer");
 var cors = require("cors");
 const fss = require("fs");
-
+const requireLogin = require(".././controller/requireLogin");
 app.use(cors());
 
-app.post("/addkitchen", function(req, res) {
+app.post("/addkitchen", requireLogin, function(req, res) {
+  if (!req.user) {
+    return res.status(401).send({ error: "Require Login to add kitchen" });
+  }
+
   // res.send('respond with a resource');
-  console.log(req.body);
+  console.log(req.body, "body log");
   mysqlconnection.connect(function(err) {
     mysqlconnection.query(
-      `INSERT INTO kitchens(name,owner_name,address,mail_id,city,zipcode,category,imagekey) VALUES("${
+      `INSERT INTO kitchens(name,owner_name,address,mail_id,city,zipcode,category,userid,imagekey) VALUES("${
         req.body.Firststate.name
       }","${req.body.name}","${req.body.Firststate.address}","${
         req.body.mail
       }","${req.body.Firststate.city}","${
         req.body.Firststate.zip
-      }","kitchen","${`req.body.img`}")`,
+      }","kitchen","${req.body.dbId}","${`req.body.img`}")`,
       function(err, result) {
         if (err) throw err;
         mysqlconnection.query(

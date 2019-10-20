@@ -10,7 +10,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((email, done) => {
   console.log(email, "console from desilibzer");
-  const USERQUERY = `SELECT userId,name,profilePic,user_type,mail_id,license FROM users WHERE mail_id='${email}'`;
+  const USERQUERY = `SELECT id,userId,name,profilePic,user_type,mail_id,license FROM users WHERE mail_id='${email}'`;
   mysqlconnection.query(USERQUERY, (err, row) => {
     done(err, row);
   });
@@ -51,7 +51,8 @@ passport.use(
                   profilePic: row[0].profilePic,
                   email: row[0].mail_id,
                   user_type: row[0].user_type,
-                  license: row[0].license
+                  license: row[0].license,
+                  dbId: row[0].id
                 };
                 done(null, user);
               });
@@ -75,7 +76,8 @@ passport.use(
             profilePic: row[0].profilePic,
             email: row[0].mail_id,
             user_type: row[0].user_type,
-            license: row[0].license
+            license: row[0].license,
+            dbId: row[0].id
           };
 
           done(null, user);

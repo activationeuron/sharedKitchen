@@ -200,7 +200,8 @@ function VerticalLinearStepper(props) {
         Secondstate: Secondstate,
         img: results,
         mail: props.authState[0].mail_id,
-        name: props.authState[0].name
+        name: props.authState[0].name,
+        dbId: props.authState[0].id
       })
     })
       .then(result => result.json())
