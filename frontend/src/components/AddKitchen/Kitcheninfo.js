@@ -198,7 +198,9 @@ function VerticalLinearStepper(props) {
       body: JSON.stringify({
         Firststate: Firststate,
         Secondstate: Secondstate,
-        img: results
+        img: results,
+        mail: props.authState[0].mail_id,
+        name: props.authState[0].name
       })
     })
       .then(result => result.json())

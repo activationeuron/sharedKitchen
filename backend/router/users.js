@@ -12,20 +12,16 @@ app.use(cors());
 
 app.post("/addkitchen", function(req, res) {
   // res.send('respond with a resource');
-  console.log(req.body.Firststate);
+  console.log(req.body);
   mysqlconnection.connect(function(err) {
     mysqlconnection.query(
-      "Insert into kitchens (name,address,city,zipcode,category,imagekey) VALUES ('" +
-        req.body.Firststate.name +
-        "','" +
-        req.body.Firststate.address +
-        "','" +
-        req.body.Firststate.city +
-        "','" +
-        req.body.Firststate.zip +
-        "','kitchen','" +
-        req.body.img +
-        "')",
+      `INSERT INTO kitchens(name,owner_name,address,mail_id,city,zipcode,category,imagekey) VALUES("${
+        req.body.Firststate.name
+      }","${req.body.name}","${req.body.Firststate.address}","${
+        req.body.mail
+      }","${req.body.Firststate.city}","${
+        req.body.Firststate.zip
+      }","kitchen","${`req.body.img`}")`,
       function(err, result) {
         if (err) throw err;
         mysqlconnection.query(
