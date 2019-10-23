@@ -119,39 +119,39 @@ class Layout extends Component {
                   <div className="col-md-6">
                     <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                       <li className="ftco-animate">
-                        <a href="" target="_blank">
+                        <Link href="" target="_blank">
                           <span>
                             <i className="fab fa-facebook-f"></i>
                           </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="ftco-animate">
-                        <a href="" target="_blank">
+                        <Link href="" target="_blank">
                           <span>
                             <i className="fab fa-instagram"></i>
                           </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="ftco-animate">
-                        <a href="" target="_blank">
+                        <Link href="" target="_blank">
                           <span>
                             <i className="fab fa-linkedin-in"></i>
                           </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="ftco-animate">
-                        <a href="" target="_blank">
+                        <Link href="" target="_blank">
                           <span>
                             <i className="fab fa-instagram"></i>
                           </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="ftco-animate">
-                        <a href="" target="_blank">
+                        <Link href="" target="_blank">
                           <span>
                             <i className="fab fa-linkedin-in"></i>
                           </span>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
