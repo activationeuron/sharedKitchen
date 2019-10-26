@@ -1,9 +1,15 @@
 import React from "react";
 import Layout from "../Layout";
+import Instagram from "./Instagram";
+import Work from "./Work";
+import Sample from "./Sample";
 const HomePage = () => {
   return (
     <Layout>
-      <div>Amit rai</div>
+      <Sample />
+
+      <Instagram />
+      <Work />
     </Layout>
   );
 };

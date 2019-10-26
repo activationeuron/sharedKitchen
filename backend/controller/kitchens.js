@@ -5,7 +5,7 @@ const getProducts = (req, res) => {
 
 const getProductById = (req, res) => {
   mysqlconnection.query(
-    `SELECT * from kitchens WHERE id=${req.params.id}`,
+    `SELECT * FROM kitchens WHERE id=${req.params.id}`,
     (err, rows, fields) => {
       if (err) {
         console.log(err);

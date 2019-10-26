@@ -6,5 +6,11 @@ const mysqlconnection = mysql.createConnection({
   password: "helloworld",
   database: "shared_kitchen",
   port: 3306
+
+  // host: "localhost",
+  // user: "amit",
+  // password: "amit",
+  // database: "Kitchen",
+  // port: 3307
 });
 module.exports = { mysqlconnection };

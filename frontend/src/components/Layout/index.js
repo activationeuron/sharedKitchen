@@ -56,7 +56,10 @@ class Layout extends Component {
           <div className="headercontainer">
             <div className="header">
               <div className="logo">
-                <img src={brand} alt="brand" className="logo" />
+                <Link to="/">
+                  {" "}
+                  <img src={brand} alt="brand" className="logo" />
+                </Link>
               </div>
               <div className="search-la">
                 <form action="">

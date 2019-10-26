@@ -11,11 +11,8 @@ class index extends Component {
     console.log(this.props);
     return (
       <Layout>
-        <div className="jumbotron jumbotron-fluid">
-          <div
-            className="container"
-            style={{ marginLeft: "0", marginRight: "0" }}
-          >
+        <div className="jumbotron">
+          <div>
             <KitchenShowcase />
           </div>
         </div>

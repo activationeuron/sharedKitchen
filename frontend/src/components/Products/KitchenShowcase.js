@@ -1,23 +1,19 @@
 import React, { Component } from "react";
+import "./index.css";
 
 import { connect } from "react-redux";
 
 class KitchenShowcase extends Component {
   renderContent() {
+    console.log(this.props.product.imagekey);
     if (!this.props.product) {
       return <div>Loading...</div>;
     }
     return (
-      <div className="row">
-        <div className="card text-center w-50 ml-10">
-          <div className="card-body ">
-            <h5 className="card-title">{this.props.product.name}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">
-              {this.props.product.city}-{this.props.product.category}
-            </h6>
-            <b className="card-text text-muted">{this.props.product.address}</b>
-          </div>
-        </div>
+      <div className="showCase">
+        <div>Aasasasas</div>
+
+        <img src={`${this.props.product.imagekey}/kitchen/kitchen1.jpg`}></img>
       </div>
     );
   }
