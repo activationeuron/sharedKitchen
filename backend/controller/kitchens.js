@@ -10,7 +10,6 @@ const getProductById = (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(rows);
         return res.json(rows);
       }
     }
@@ -18,7 +17,7 @@ const getProductById = (req, res) => {
 };
 
 const getProductReviewById = (req, res) => {
-  const sql = `SELECT * from product_review WHERE kitchenId=${req.params.id} LIMIT 10`;
+  const sql = `SELECT product_review.date,product_review.userid,product_review.ratings,product_review.review,users.id,users.name from product_review Join users on users.id=product_review.userid WHERE kitchenId=${req.params.id} LIMIT 10`;
   mysqlconnection.query(sql, (err, result, fields) => {
     if (err) {
       console.log(err);
@@ -28,39 +27,34 @@ const getProductReviewById = (req, res) => {
 };
 
 const postReviewById = (req, res) => {
-  console.log(req.body);
-  const sql = `INSERT into product_review(userid,kitchenId,ratings,review) VALUES('${req.body.emailId}' ,${req.body.kitchenId},'${req.body.stars}','${req.body.review}')`;
-  console.log(sql);
+  const sql = `INSERT into product_review(userid,kitchenId,ratings,review) VALUES('${req.body.userId}' ,${req.body.kitchenId},'${req.body.stars}','${req.body.review}')`;
   mysqlconnection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
     }
-    console.log(result);
+    res.send({ message: "Review Sumbited Successfuly" });
   });
 };
 const postBookingData = (req, res) => {
-  console.log(req.body);
   const { start, end } = req.body;
   let start_on = start.split(" ").join("-");
   let end_on = end.split(" ").join("-");
-  console.log(start_on, end_on);
-  const sql = `INSERT INTO bookings_info(userId,kitchenId,start_on,end_on) VALUES('aforamitrai@gmail.com','${req.body.id}','${start_on}','${end_on}')`;
+  const sql = `INSERT INTO booking_info(user_id,kitchen_id,	booked_from,booked_until) VALUES('${req.body.userId}','${req.body.kitchenId}','${start_on}','${end_on}')`;
   mysqlconnection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
     }
-    console.log(result);
+    res.send({ message: "Successfuly Booked" });
   });
 };
 
 const getBookingInfo = (req, res) => {
-  console.log(req.body);
-  sql = `SELECT start_on,end_on from bookings_info WHERE kitchenId='${req.params.id}'`;
+  console.log(req.body.id, "amit rai");
+  sql = `SELECT booked_from,booked_until from booking_info WHERE 	kitchen_id='${req.params.id}'`;
   mysqlconnection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
     }
-
     res.json({ result });
   });
 };

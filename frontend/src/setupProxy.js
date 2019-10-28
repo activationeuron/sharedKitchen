@@ -6,4 +6,6 @@ module.exports = function(app) {
   app.use(proxy("/api/*", { target: "http://localhost:5000/" }));
   app.use(proxy("/users/*", { target: "http://localhost:5000/pardeep/" }));
   app.use(proxy("/product/*", { target: "http://localhost:5000/p/" }));
+  app.use(proxy("/bookkitchens/*", { target: "http://localhost:5000/p/" }));
+  // app.use(proxy("/p/*", { target: "http://localhost:5000/" }));
 };
