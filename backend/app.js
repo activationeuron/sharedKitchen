@@ -3,6 +3,7 @@ const cookieSession = require("cookie-session");
 const cors = require("cors");
 const logger = require("morgan");
 const passport = require("passport");
+var bodyParser = require("body-parser");
 
 const keys = require("./config/keys.js");
 require("./services/passport");
@@ -17,6 +18,7 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
 app.use(
   cookieSession({
     maxAge: 1 * 24 * 60 * 60 * 1000,

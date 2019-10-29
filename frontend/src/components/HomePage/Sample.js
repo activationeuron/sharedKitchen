@@ -1,7 +1,8 @@
 import Carousel from "react-multi-carousel";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-
+import { Link } from "react-router-dom";
+import coffee from "../../asset/coffee.jpg";
 import continental from "../../asset/continental.png";
 import italian from "../../asset/italian.png";
 import japanese from "../../asset/japanese.jpg";
@@ -11,7 +12,6 @@ import french from "../../asset/french.jpg";
 import indian from "../../asset/indian.jpg";
 import mexican from "../../asset/mexican.jpg";
 import american from "../../asset/american.jpg";
-import coffee from "../../asset/coffee.jpg";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -42,86 +42,86 @@ const Simple = ({ deviceType }) => {
       itemClass="carousel-item-padding-100-px"
     >
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={italian} alt="italian" />
           <div className="carousel-caption">
             <h1>Italian</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={coffee} alt="coffee" />
           <div className="carousel-caption">
             <h1>Coffee</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={continental} alt="continental" />
           <div className="carousel-caption">
             <h1>Continental</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
         <div>
-          <a id="imagelinks" href="#homepage">
+          <Link id="imagelinks" to={"#homepage"}>
             <img id="sliderimages" src={japanese} alt="japanese" />
             <div className="carousel-caption">
               <h1>Japanese</h1>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={indian} alt="indian" />
           <div className="carousel-caption">
             <h1>Indian</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={spanish} alt="spanish" />
           <div className="carousel-caption">
             <h1>Spanish</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={barbecue} alt="barbecue" />
           <div className="carousel-caption">
             <h1>Barbecue</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={french} alt="french" />
           <div className="carousel-caption">
             <h1>French</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={mexican} alt="mexican" />
           <div className="carousel-caption">
             <h1>Mexican</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div>
-        <a id="imagelinks" href="#homepage">
+        <Link id="imagelinks" to={"#homepage"}>
           <img id="sliderimages" src={american} alt="american" />
           <div className="carousel-caption">
             <h1>American</h1>
           </div>
-        </a>
+        </Link>
       </div>
     </Carousel>
   );
