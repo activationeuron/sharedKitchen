@@ -6,6 +6,9 @@ import Auth from "./components/Auth/Auth";
 import Search from "./components/Search/Search";
 import addkitchen from "./components/AddKitchen/Kitcheninfo";
 import products from "./components/Products/";
+import renterdashboard from "./components/Dashboards/RenterDashboard";
+import ownerdashboard from "./components/Dashboards/OwnerDashboard";
+import admindashboard from "./components/Dashboards/AdminDashboard";
 const MainRouter = () => {
   return (
     <div>
@@ -16,6 +19,9 @@ const MainRouter = () => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/addkitchen" component={addkitchen} />
         <Route path="/products/:id" exact component={products} />
+        <Route exact path="/renterdashboard" component={renterdashboard} />
+        <Route exact path="/ownerdashboard" component={ownerdashboard} />
+        <Route exact path="/admindashboard" component={admindashboard} />
       </Switch>
     </div>
   );

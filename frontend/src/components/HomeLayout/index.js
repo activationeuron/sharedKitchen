@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./la-main.css";
+import "./la-homepage.css";
 import { Link } from "react-router-dom";
 import brand from "../../asset/brand.png";
 import { connect } from "react-redux";
@@ -7,7 +7,6 @@ import { fetchUsers } from "../../actions/index";
 class Layout extends Component {
   componentDidMount() {
     this.props.fetchUsers();
-    console.log(this.props);
   }
 
   renderContent() {
@@ -24,9 +23,7 @@ class Layout extends Component {
         return (
           <>
             <li>
-              <Link to={"/" + this.props.auth[0].user_type + "dashboard"}>
-                DASHBOARD
-              </Link>
+              <Link to="/profile">PROFILE</Link>
             </li>
             <li>
               <a href="/api/logout">LOGOUT</a>
@@ -37,7 +34,6 @@ class Layout extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <div>

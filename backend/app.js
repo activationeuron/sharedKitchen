@@ -10,6 +10,8 @@ require("./services/passport");
 const Profil = require("./router/profile");
 const pardeepFile = require("./router/users.js");
 const Products = require("./router/kitchens.js");
+const fetchdb = require("./router/fetchdb.js");
+const dashboard = require("./router/dashboard.js");
 const app = express();
 
 app.use(logger("dev"));
@@ -27,6 +29,8 @@ require("./authRouts/authRoutes.js")(app);
 app.use("/api/", Profil);
 app.use("/pardeep/users/", pardeepFile);
 app.use("/p/", Products);
+app.use("/fetchdb/", fetchdb);
+app.use("/dashboard/", dashboard);
 app.listen(5000, () => {
   console.log("appstarted at 5000");
 });

@@ -1,0 +1,781 @@
+.Apps {
+  text-align: center;
+  text-decoration: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.navbar {
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  text-decoration-color: black;
+  padding-top: 10px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav {
+  float: right;
+  background-color: transparent;
+}
+.navbar-brand {
+  color: transparent;
+  background-color: transparent;
+}
+body {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+}
+
+#mylink1 {
+  text-decoration: none;
+  color: black;
+  font-size: 1vw;
+}
+
+#mylink2 {
+  text-decoration: none;
+  color: black;
+  font-size: 1vw;
+}
+#findimg {
+  float: left;
+  size: 50% 50%;
+  margin-left: 30%;
+}
+#listimg {
+  height: 40px;
+  width: 50px;
+  margin-top: 50px;
+  margin-left: 125px;
+}
+
+#findtext {
+  text-align: center;
+  font-size: 15px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  width: 40%;
+  float: right;
+  padding: 5px;
+  margin-right: 100px;
+  margin-top: 10px;
+}
+#listtext {
+  text-align: center;
+  margin-right: 55px;
+  font-size: 15px;
+  text-decoration: none;
+  max-width: 400px;
+  margin-left: 100px;
+  border-style: solid;
+  margin-top: 50px;
+  width: 100%;
+  border-width: 1px;
+  max-height: 50px;
+  padding: 5px;
+}
+
+#toppage {
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 300px;
+  background-image: url("../../asset/rect.png");
+}
+#tabs {
+  padding-left: 0px;
+  height: 100%;
+  padding-top: 50px;
+  background-color: #dae1ed;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: #bfcadb;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: "Montserrat", sans-serif;
+  background-size: 100%;
+}
+#pinimg {
+  position: relative;
+  height: 40px;
+  width: 30px;
+  margin-left: 90px;
+}
+
+.col {
+  padding-bottom: 40px;
+}
+.tabspace {
+  padding-bottom: 40px;
+}
+.back {
+  background-color: #ffce54;
+}
+.tab {
+  background-color: #ffb311;
+  height: 50px;
+  padding-left: 5px;
+}
+.labels {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+}
+.card-title {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+#card-links {
+  text-decoration: none;
+  color: black;
+}
+
+.price {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+}
+
+.card-text {
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.checked {
+  color: green;
+}
+#loc {
+  margin-top: -30px;
+  text-decoration: none;
+}
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  float: left;
+}
+
+.topnav a:hover {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.topnav-right {
+  float: right;
+}
+#cicon {
+  height: 45px;
+  width: 50px;
+  margin-left: 40px;
+}
+.container-fluid {
+  padding-top: 125px;
+}
+
+.container-fluid2 {
+  padding-top: 20px;
+}
+a :hover {
+  text-decoration: none;
+}
+
+#cui {
+  margin-top: -30px;
+  margin-left: 100px;
+}
+.cuisines,
+.works,
+.help,
+.images,
+.insta-posts {
+  height: 110%;
+  background-color: #dae1ed;
+  border-bottom: 3px;
+  border-style: solid;
+  border-color: #bfcadb;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: "Montserrat", sans-serif;
+  background-size: 100%;
+  padding-top: 25px;
+}
+
+.links {
+  height: 110%;
+  background-color: #dae1ed;
+  font-family: "Montserrat", sans-serif;
+  background-size: 100%;
+  padding-top: 25px;
+}
+
+.txt-img-align {
+  position: relative;
+}
+.txt-center {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
+}
+.mytxt-align {
+  position: absolute;
+  left: 0px;
+  top: -500px;
+  color: blue;
+}
+.img-adjust {
+  width: 100%;
+}
+.display-img {
+  display: inline-block;
+}
+
+.cuisine-row {
+  padding-top: 20px;
+}
+
+#coffee {
+  size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.mycol {
+  width: 400px;
+  padding-left: 50px;
+}
+
+.contain {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-top: 22px;
+}
+.help {
+  padding-bottom: 22px;
+}
+.labeltext {
+  position: absolute;
+  text-align: center;
+  padding-top: 200px;
+  width: 100%;
+  float: bottom;
+  color: white;
+  font-size: 50px;
+}
+.headerlinks :header {
+  text-decoration: none;
+}
+.cuisine-card {
+  height: 300px;
+  width: 400px;
+}
+.card {
+  background-color: transparent;
+}
+.midrow {
+  padding-top: 100px;
+}
+.works {
+  padding-top: 30px;
+}
+.links {
+  padding-bottom: 0px;
+}
+#howimg {
+  margin-top: -75px;
+  margin-left: 0px;
+}
+#how {
+  margin-left: 00px;
+}
+.linkimg {
+  padding-bottom: 25px;
+}
+.instagram {
+  width: 100%;
+  padding-top: 2%;
+  padding-left: 0%;
+  height: 110%;
+  background-color: #dae1ed;
+  background-size: 100%;
+}
+.instagram-text {
+  height: 110%;
+  background-color: #dae1ed;
+  background-size: 100%;
+  padding-top: 1%;
+  padding-left: 0%;
+}
+
+#example {
+  height: 250px;
+  width: 300px;
+}
+#text {
+  text-align: center;
+  font-size: 15px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  width: 250px;
+  float: left;
+  padding: 10px;
+  margin-top: 25px;
+  margin-left: 175px;
+}
+.follow {
+  padding-left: 27%;
+}
+
+#cardimg {
+  height: 300px;
+  width: 418px;
+}
+
+#sliderimages {
+  width: 100%;
+  height: 300px;
+}
+
+#myCarousel {
+  width: 420px;
+  height: 300px;
+}
+
+#instagram-tab {
+  padding-left: 20px;
+}
+
+.checked {
+  color: #2ce01b;
+}
+
+.halfstar,
+.blankstar {
+  color: #2ce01b;
+}
+
+#topkitchenlabel :hover {
+  text-decoration: none;
+}
+#topkitchenlabel {
+  color: black;
+  margin-left: 130px;
+}
+.imagelabel {
+  margin-right: 100px;
+}
+
+.imageandcuisine {
+  margin-left: 20%;
+}
+
+.imagespacing {
+  padding-left: 20px;
+}
+
+.dlabel {
+  color: #ed5a26;
+  border-style: solid;
+  border-color: #ed5a26;
+  margin: 20px 80px 20px 80px;
+  padding: 10px 10px 10px 10px;
+  border-width: 1px;
+}
+
+.selector {
+  color: #29b470;
+}
+
+.month {
+  margin-left: 10px;
+  color: #29b470;
+  border-style: solid;
+  border-color: #ed5a26;
+  outline: 0px;
+}
+
+.selectform {
+  padding-top: 100px;
+}
+
+.firstrow,
+.optionrow,
+.licenserow,
+.statrow,
+.mybookingdiv,
+.requestrow {
+  border-style: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin: 0px 20px 0px 20px;
+  padding-bottom: 10px;
+  border-color: #c7c7c7;
+}
+
+.fa {
+  padding-right: 10px;
+  padding-left: 0px;
+  font-size: 24px;
+  size: 24px;
+}
+
+.fa-clock-o,
+.fa-check-square-o,
+.fa-bell,
+.comment {
+  color: #29b470;
+  size: 24px;
+}
+
+.textlink {
+  background-color: #29b470;
+  color: white;
+  margin-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-top: -5px;
+  border-radius: 3px;
+}
+
+.restoname {
+  text-decoration: none;
+  color: #29b470;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.statustab {
+  margin-top: 40px;
+}
+
+.statlabel {
+  margin-top: 20px;
+  color: #ed5a26;
+}
+
+.statvalue {
+  color: #29b470;
+  padding-top: 25px;
+}
+
+.statvar {
+  color: #ed5a26;
+}
+
+.stattab {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  margin: 0px 100px 0px 100px;
+  background-color: #fee9e1;
+}
+
+.selectform2 {
+  margin-top: 10px;
+  margin-left: -45px;
+}
+
+.mysavedlink {
+  margin-top: 50px;
+}
+
+.mysavedlink :hover {
+  text-decoration: none;
+}
+
+.sublabel {
+  text-decoration: underline;
+  color: #29b470;
+}
+
+.kitchenlabel {
+  color: #ed5a26;
+  border-radius: 5px;
+}
+
+#kitchenlabel2 {
+  color: #ed5a26;
+  border-radius: 5px;
+  padding-left: 50px;
+}
+
+#kitchenlabel2 :hover {
+  color: #ed5a26;
+}
+
+.labeloption {
+  margin-top: 3px;
+}
+
+.previousbooking {
+  margin-top: 10px;
+}
+
+.datetext {
+  color: #29b470;
+}
+
+.pagelink :hover {
+  text-decoration: none;
+}
+
+.text-left {
+  margin-left: 0px;
+}
+
+.textalign {
+  padding-left: 80px;
+}
+
+.previousrow {
+  margin-top: 10px;
+}
+
+.listings {
+  padding-bottom: 10px;
+}
+
+.licensespacing {
+  padding-bottom: 30px;
+}
+
+.statcolumn {
+  height: 100px;
+  width: 200px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+}
+
+.statcolumn2 {
+  height: 100px;
+  width: 300px;
+  background-color: white;
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.statcolumn3 {
+  height: 100px;
+  width: 200px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+}
+
+.fa-paper-plane-o {
+  color: #ed5a26;
+}
+
+.fa-hourglass-half {
+  color: #ed5a26;
+}
+
+#pagelink {
+  color: #ed5a26;
+  text-decoration: none;
+}
+
+#pagelink:hover {
+  color: #ed5a26;
+}
+
+#buttonlink {
+  color: white;
+  margin-left: 0px;
+}
+
+#buttonlink:hover {
+  text-decoration: none;
+  margin-left: 0px;
+}
+
+.chatlink {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ed5a26;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  margin-left: 40px;
+  margin-left: 40px;
+}
+
+.chatlink :hover {
+  text-decoration: none;
+}
+
+.requests {
+  padding-bottom: 5px;
+}
+
+#userinput {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+}
+
+#password {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+}
+#confirm_password {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+}
+
+#buttoninput {
+  margin-top: 20px;
+  width: 200px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.fb {
+  margin-bottom: 50px;
+}
+
+.label {
+  color: white;
+}
+.formcolumn1 {
+  border-style: solid;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-color: #c7c7c7;
+  margin-top: 20px;
+}
+
+.formcolumn2 {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #f05a28;
+}
+.forgot {
+  margin-left: 75px;
+  margin-top: 15px;
+}
+.facebook {
+  padding-top: 15px;
+}
+
+.img-responsive {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.fbbutton {
+  color: green;
+}
+
+.messagecontain {
+  margin-top: 20%;
+  border-style: solid;
+  border-color: #bfbfbf;
+  background-color: #15ff00;
+  border-width: 2px;
+  border-radius: 20px;
+  width: 100%;
+}
+.text-message {
+  text-align: center;
+}
+.messagetext {
+  color: white;
+}
+
+.ownerrow {
+  margin-bottom: 20px;
+}
+
+.loginpage {
+  height: 650px;
+}
+
+#instaimg {
+  margin-left: 80px;
+}
