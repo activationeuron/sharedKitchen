@@ -1,0 +1,23 @@
+{
+  "name": "newkitchen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd backend && nodemon app.js\" \"cd frontend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravindsamala02/newkitchen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  },
+  "bugs": {
+    "url": "https://github.com/aravindsamala02/newkitchen/issues"
+  },
+  "homepage": "https://github.com/aravindsamala02/newkitchen#readme"
+}

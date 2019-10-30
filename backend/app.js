@@ -29,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./authRouts/authRoutes.js")(app);
 app.use("/api/", Profil);
-app.use("/pardeep/users/", pardeepFile);
+app.use("/users", pardeepFile);
 app.use("/p/", Products);
 app.use("/fetchdb/", fetchdb);
 app.use("/dashboard/", dashboard);

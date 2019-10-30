@@ -11,7 +11,7 @@ export const getProfile = () => async dispatch => {
 };
 
 export const fetchKitchens = id => async dispatch => {
-  const response = await axios.get(`/product/${id}`);
+  const response = await axios.get(`/p/product/${id}`);
   dispatch({ type: "FETCH_PRODUCT", payload: response.data[0] });
 };
 // final

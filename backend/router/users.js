@@ -21,7 +21,7 @@ app.post("/addkitchen", requireLogin, function(req, res) {
         req.body.mail
       }","${req.body.Firststate.city}","${
         req.body.Firststate.zip
-      }","kitchen","${req.body.dbId}","${`req.body.img`}")`,
+      }","kitchen","${req.body.dbId}","${req.body.img}")`,
       function(err, result) {
         if (err) throw err;
         mysqlconnection.query(
