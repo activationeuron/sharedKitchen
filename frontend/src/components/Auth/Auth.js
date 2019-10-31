@@ -20,6 +20,14 @@ class Auth extends React.Component {
   };
 
   googleHandle = args => {
+    fetch(args)
+        .then(res => {
+            
+            return res.json()
+         })
+        .then(users => { 
+            
+         });
     window.location.href = args;
   };
   faceBookHandle = args => {
@@ -45,7 +53,7 @@ class Auth extends React.Component {
                 />
               </div>
               <div className="form-group row">
-                <button className="btn" type="submit">
+                <button className="btn1" type="submit">
                   Log In
                 </button>
               </div>
@@ -67,7 +75,7 @@ class Auth extends React.Component {
               </div>
 
               <div className="form-group row">
-                <button className="btn" type="submit">
+                <button className="btn1" type="submit">
                   Sign Up Using Email
                 </button>
               </div>

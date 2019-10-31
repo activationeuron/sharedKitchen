@@ -11,8 +11,6 @@ const requireLogin = require(".././controller/requireLogin");
 app.use(cors());
 
 app.post("/addkitchen", requireLogin, function(req, res) {
-  // res.send('respond with a resource');
-  console.log(req.body, "body log");
   mysqlconnection.connect(function(err) {
     mysqlconnection.query(
       `INSERT INTO kitchens(name,owner_name,address,mail_id,city,zipcode,category,userid,imagekey) VALUES("${
@@ -66,7 +64,6 @@ app.post("/image", function(req, res, err) {
         counter++;
         c = file.fieldname + counter + "." + fileExtension;
       } else c = file.fieldname + "." + fileExtension;
-      console.log(c);
       cb(null, c);
     },
     destination: (req, file, callback) => {
@@ -98,12 +95,25 @@ app.post("/image", function(req, res, err) {
     return res.status(200).send(req.file);
   });
 });
+app.get("/nearby", function(req, res, next) {
+  // res.send('respond with a resource');
+  mysqlconnection.connect(function(err) {
+    let lat = req.query.lat;
+    let longi = req.query.longi;
+    mysqlconnection.query(
+      `SELECT *, ((ACOS(SIN(${lat} * PI() / 180) * SIN(latitude * PI() / 180) + COS(${lat} * PI() / 180) * COS(latitude * PI() / 180) * COS((${longi} - longitude) * PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344) as distance FROM kitchens HAVING distance <= 5 ORDER BY distance ASC LIMIT 3`,
+      function(err, result, fields) {
+        if (result != null) res.json(result);
+      }
+    );
+  });
+});
 app.get("/all", function(req, res, next) {
   // res.send('respond with a resource');
   mysqlconnection.connect(function(err) {
     let page = req.query.search;
     mysqlconnection.query(
-      `SELECT * FROM kitchens INNER JOIN kitchen_info ON kitchens.id=kitchen_info.id`,
+      `SELECT * FROM kitchens INNER JOIN kitchen_info ON kitchens.id=kitchen_info.id LIMIT 3`,
       function(err, result, fields) {
         if (result != null) res.json(result);
       }

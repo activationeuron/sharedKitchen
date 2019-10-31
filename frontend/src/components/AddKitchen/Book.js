@@ -321,7 +321,7 @@ function getStepContent(stepIndex) {
     </div>
       </div>;
     case 2:
-      return <div align="center"><TextField
+      return <div align="center"><TextField required
       id="standard-name"
       label="Price Per Hour"
       className={classes.textField}
@@ -334,7 +334,7 @@ function getStepContent(stepIndex) {
         <h3 align="center">Terms of Usage What All Things A Guest Can Use</h3>
       <h6 align="center">*Description: Fill in the Basic Details</h6>
       <p></p>
-      <TextField
+      <TextField required
       id="standard-name"
       label="Type Terms Of Usage"
       fullWidth

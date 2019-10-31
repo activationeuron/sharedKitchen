@@ -10,9 +10,21 @@ class Search extends Component {
     name: "",
     current: "",
     currents: "",
-    found: "Top kitchens near your location"
+    found: "Top kitchens near your location",
+    clicke:false
   };
-
+  componentDidMount() {
+    setTimeout(()=> {
+    navigator.geolocation.getCurrentPosition(function(position) {
+    },function(error) {
+      if (error.code == error.PERMISSION_DENIED)
+        abc();
+    })},0);
+    const abc = () => {
+      this.setState({clicke:false});
+      this.setState({found:"All Kitchens"})
+    }
+  }
   onUpdate = names => {
     this.setState({ name: names, found: `Search Results For ${names}` });
   };
@@ -25,9 +37,9 @@ class Search extends Component {
         <br />
         <br />
         <h3 align="center">
-          <i class="fas fa-map-marker-alt"></i> {this.state.found}
+          <i class="fas fa-map-marker-alt"></i> <Button variant="light" onClick={async ()=>{await this.setState({clicke:true});}}><h3>{this.state.found}</h3></Button>
         </h3>
-        <Section name={this.state.name} />
+        <Section clicke={this.state.clicke} name={this.state.name} />
         <h4 align="center">
           <i class="fa fa-search" aria-hidden="true"></i> Can't Find A Kitchen{" "}
           <Button variant="light">
