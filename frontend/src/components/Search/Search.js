@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Section from "./Sections";
 import Header from "./Headers";
-// import Footer from "./../Footers";
+import Footer from "../Layout/Footer";
 import FormDialog from "./FormDialog";
 import Button from "react-bootstrap/Button";
 
@@ -48,7 +48,7 @@ class Search extends Component {
         <br />
         <br />
 
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }
