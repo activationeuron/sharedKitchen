@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Threesix from './threesix';
+
 class Section extends Component {
     constructor(){
         super();
-        this.state ={users: []}
+        this.state ={users:[],lat:'',longi:''}
         this.dsa={data:''}
     }
+    
     componentDidMount() {
-        
-         fetch(`/users/all`)
+        fetch(`/users/all`)
         .then(res => {
             
             return res.json()
@@ -19,15 +20,59 @@ class Section extends Component {
             
             this.setState({ users })
          });
-      }
+       
+      
+    }
     componentWillReceiveProps(nextProps) {
+        if(nextProps.clicke==true&&nextProps.name==="")
+        {
+            
+                var lat;
+                var longi;
+                setTimeout(()=> {
+               if (navigator.geolocation) {
+                   
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    lat = position.coords.latitude;
+                    longi = position.coords.longitude;
+                    abc();
+                  },function(error) {
+                    if (error.code == error.PERMISSION_DENIED)
+                    alert("Turn On Your Location For Better Results");
+                   
+                      bcd();
+                  })}
+                  
+                },0);
+                const bcd = () => {
+                    fetch(`/users/all`)
+                    .then(res => {
+                        
+                        return res.json()
+                     })
+                    .then(users => { 
+                        
+                        this.setState({ users })
+                     });
+                }
+                 const abc = () => {
+                     fetch(`/users/nearby?lat=${lat}&longi=${longi}`)
+                    .then(res => {
+                        return res.json()
+                     })
+                    .then(users => { 
+                        this.setState({ users:users,lat:lat,longi:longi})
+                     });
+                  }
+            
+        }
         var uri;
         
         if(nextProps.name){
 uri=`/users?search=${nextProps.name}`;
         }
         else{
-            uri=`/users/all`;
+            uri=`/users/nearby?lat=${this.state.lat}&longi=${this.state.longi}`;
         }
            fetch(uri)
              .then(res => {
@@ -37,7 +82,7 @@ uri=`/users?search=${nextProps.name}`;
              .then(users => { 
                  
                  if(users!=null)
-                 this.setState({ users });
+                 this.setState({ users:users });
                  else
                  this.setState({users:[]});
               });
@@ -74,7 +119,7 @@ uri=`/users?search=${nextProps.name}`;
                 <h5><i className="fa fa-bookmark" aria-hidden="true"></i> Save for later</h5>
              
                <Threesix path={`${window.location.protocol}//image.${window.location.hostname}/${user.imagekey}/threesixty/threesixty.jpeg`}/>
-               <h5>5 miles from you</h5>
+               <h5>{Math.floor(user.distance)} miles from you</h5>
                 </div>
             </div>
         </div><br/><br/><br/><br/><br/>

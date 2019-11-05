@@ -18,7 +18,6 @@ function VerticalLinearStepper(props) {
   useEffect(() => {
     props.fetchUsers();
   }, []);
-  console.log(props);
   const axios = require("axios");
   const [Firststate, setFirststate] = React.useState({});
   const onFirst = pictures => {

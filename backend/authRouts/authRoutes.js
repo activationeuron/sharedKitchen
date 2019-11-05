@@ -34,4 +34,26 @@ module.exports = app => {
       res.redirect("/");
     }
   );
+  
+// local------------------------------------------------------------------------------
+ app.post('/signup',(req,res,next)=>{console.log(req.body) 
+  next()}, passport.authenticate('local-signup', {
+  successRedirect: '/profile',
+  failureRedirect: '/signup',
+ }));
+
+ app.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/profile',
+  failureRedirect: '/login',
+ }),
+  function(req, res){
+   console.log(req)
+  });
+
+  
+
+
 };
+
+
+

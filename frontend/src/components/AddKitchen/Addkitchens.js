@@ -115,7 +115,7 @@ export default function Addkitchens(props) {
           <div className="row">
             <div className="col-sm-3"></div>
             <div className="col-sm-3">
-              <TextField
+              <TextField required
                 id="outlined-name"
                 label="Place Name"
                 fullWidth
@@ -126,7 +126,7 @@ export default function Addkitchens(props) {
                 variant="outlined"
 
               />
-              <TextField
+              <TextField required
 
                 id="outlined-select-type"
                 select
@@ -154,7 +154,7 @@ export default function Addkitchens(props) {
             </div>
 
             <div className="col-sm-4">
-              <TextField
+              <TextField required
 
                 id="address"
                 label="Street Address"
@@ -164,7 +164,7 @@ export default function Addkitchens(props) {
                 margin="normal"
                 variant="outlined"
               />
-              <TextField
+              <TextField required
 
                 id="city"
                 label="City"
@@ -174,7 +174,7 @@ export default function Addkitchens(props) {
                 margin="normal"
                 variant="outlined"
               />
-              <TextField
+              <TextField required
 
                 id="zip"
                 label="Zip Code"
@@ -241,7 +241,7 @@ export default function Addkitchens(props) {
         return (<div><h5 align="center">Amenities</h5>
           <h6 align="center">*Description: What are the amenities you are provoding to guest</h6>
           <form onSubmit={handleNext}>
-            <TextField value={values.amenities}
+            <TextField required value={values.amenities}
               onChange={handleChange('amenities')} className={classes.textFieldam} id="time" type="text" multiline />
             <p></p>
             <Button variant="contained" style={{ background: '#29B470', color: 'white' }} type="submit">Next</Button>
@@ -276,7 +276,7 @@ export default function Addkitchens(props) {
         return (<div><h5 align="center">Description</h5>
           <h6 align="center">*Description: Write about your Kitchen in 5-6 Lines</h6>
           <form onSubmit={handleNext}>
-            <TextField value={values.description}
+            <TextField required value={values.description}
               onChange={handleChange('description')} className={classes.textFieldam} id="time" type="text" multiline />
             <p></p><Button variant="contained" style={{ background: '#29B470', color: 'white' }} type="submit">Next</Button>
           </form>

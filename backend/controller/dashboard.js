@@ -1,4 +1,4 @@
-const { mysqlconnection } = require("../DB/index");
+const { mysqlconnection } = require("../db/index");
 var express = require("express");
 var router = express.Router();
 var jwt = require("jsonwebtoken");
@@ -14,11 +14,9 @@ const renterData = (req, res) => {
   license = [];
   requests = [];
   userdata = [];
-  console.log(req.user[0].id);
   userdata = req.user[0];
   console.log(userdata);
   try {
-    console.log("hello");
     userid = req.user[0].id;
     console.log(userid);
     if (req.user[0].usertype == "owner") {
@@ -68,37 +66,45 @@ const adminData = (req, res) => {
   kitchens = [];
   license = [];
   requests = [];
+  userid = req.user[0].id;
+  if (req.user[0].usertype == "admin") {
+    console.log("invalid user");
+    res.json({
+      message: "false",
+      body: "Invalid user"
+    });
+  } else {
+    var query = "SELECT name FROM kitchens where verified = 0";
+    mysqlconnection.query(query, (err, rows, fields) => {
+      if (!err) {
+        console.log(rows);
+        kitchens = rows;
+      } else console.log(err);
+    });
 
-  var query = "SELECT name FROM kitchens where verified = 0";
-  mysqlconnection.query(query, (err, rows, fields) => {
-    if (!err) {
-      console.log(rows);
-      kitchens = rows;
-    } else console.log(err);
-  });
+    var query = "SELECT name FROM users where license = 0";
+    mysqlconnection.query(query, (err, rows, fields) => {
+      if (!err) {
+        console.log(rows);
+        license = rows;
+      } else console.log(err);
+    });
 
-  var query = "SELECT name FROM users where license = 0";
-  mysqlconnection.query(query, (err, rows, fields) => {
-    if (!err) {
-      console.log(rows);
-      license = rows;
-    } else console.log(err);
-  });
-
-  var query =
-    "SELECT users.id, users.name, kitchen_requests.description FROM kitchen_requests INNER JOIN users ON kitchen_requests.userid = users.id";
-  console.log(query);
-  mysqlconnection.query(query, (err, rows, fields) => {
-    if (!err) {
-      console.log(rows);
-      requests = rows;
-      res.json({
-        kitchens: kitchens,
-        license: license,
-        requests: requests
-      });
-    } else console.log(err);
-  });
+    var query =
+      "SELECT users.id, users.name, kitchen_requests.description FROM kitchen_requests INNER JOIN users ON kitchen_requests.userid = users.id";
+    console.log(query);
+    mysqlconnection.query(query, (err, rows, fields) => {
+      if (!err) {
+        console.log(rows);
+        requests = rows;
+        res.json({
+          kitchens: kitchens,
+          license: license,
+          requests: requests
+        });
+      } else console.log(err);
+    });
+  }
 };
 
 const ownerData = (req, res) => {

@@ -1,4 +1,4 @@
-const { mysqlconnection } = require("../DB/index");
+const { mysqlconnection } = require("../db/index");
 const getProducts = (req, res) => {
   res.send("test");
 };

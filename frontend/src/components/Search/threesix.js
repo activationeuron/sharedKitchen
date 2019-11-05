@@ -22,7 +22,7 @@ export default class SphereComponent extends Component {
         const PVS = Sphere({
             parent: this,
             container: this.sphereDiv,
-            panorama: this.props.path,
+            panorama: `http://localhost:8080/${this.props.path}`,
             navbar: [
                 'autorotate',
                 'zoom',

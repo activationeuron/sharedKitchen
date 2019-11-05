@@ -65,3 +65,17 @@ export const fetchBookingInfo = id => async dispatch => {
   console.log(result, "Reault of booking data");
   dispatch({ type: "GET_BOOKING", payload: result });
 };
+
+export const register=(email,password,name)=>async dispatch=>{
+const response=await axios.post("/signup",{
+email:email,password:password,name:name
+})
+dispatch({ type: "REGISTER", payload: response.data });
+}
+
+export const login=(email,password)=>async dispatch=>{
+  const response=await axios.post("/login",{
+    email:email,password:password
+  })
+  dispatch({type:"LOGIN",payload:response.data})
+}

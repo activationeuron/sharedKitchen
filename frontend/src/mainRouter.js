@@ -9,6 +9,7 @@ import products from "./components/Products/";
 import renterdashboard from "./components/Dashboards/RenterDashboard";
 import ownerdashboard from "./components/Dashboards/OwnerDashboard";
 import admindashboard from "./components/Dashboards/AdminDashboard";
+import ConsumeAuth from './components/Auth/CostumeAuth'
 const MainRouter = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const MainRouter = () => {
         <Route exact path="/renterdashboard" component={renterdashboard} />
         <Route exact path="/ownerdashboard" component={ownerdashboard} />
         <Route exact path="/admindashboard" component={admindashboard} />
+        <Route exact path="/auth/signup" component={ConsumeAuth}/>
       </Switch>
     </div>
   );

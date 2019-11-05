@@ -45,7 +45,7 @@ class Header extends Component {
         color: this.state.navbar.color
       }
     });
-
+    this.setState({people:[]});
     e.preventDefault();
   }
   onChange = e => {
@@ -193,13 +193,13 @@ class Header extends Component {
               placeholder="Zip code or city or restaurant name"
             />
             <button class="search__button"></button>
-          </form>{" "}
+          </form>
           {this.state.people.map(person => (
             <ul style={this.state} className="myUL" key={person.name}>
               <li>
                 <Link to={`/products/${person.id}`}>
                   <h6>
-                    {person.name}, {person.address}, {person.city},{" "}
+                    {person.name}, {person.address}, {person.city},
                     {person.zipcode}
                   </h6>
                 </Link>

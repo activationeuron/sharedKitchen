@@ -33,6 +33,6 @@ app.use("/users", pardeepFile);
 app.use("/p/", Products);
 app.use("/fetchdb/", fetchdb);
 app.use("/dashboard/", dashboard);
-app.listen(5000, () => {
-  console.log("appstarted at 5000");
-});
+app.listen(5000,()=>{
+  console.log("app stared at 5000")
+})

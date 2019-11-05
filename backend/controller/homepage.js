@@ -1,4 +1,4 @@
-const { mysqlconnection } = require("../DB/index");
+const { mysqlconnection } = require("../db/index");
 var express = require("express");
 var router = express.Router();
 const bodyparser = require("body-parser");
