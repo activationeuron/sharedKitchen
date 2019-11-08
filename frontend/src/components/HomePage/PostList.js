@@ -106,12 +106,7 @@ class PostList extends Component {
                         <img
                           className="card-img-top display-img"
                           id="cardimg"
-                          src={
-                            process.env.PUBLIC_URL +
-                            "/userimages/main_kitchen/" +
-                            user.id +
-                            ".jpg"
-                          }
+                          src={`${window.location.protocol}//image.${window.location.hostname}/${user.imagekey}/kitchen/kitchen1.png`}
                           alt="cards"
                         />
 
